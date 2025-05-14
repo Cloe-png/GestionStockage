@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="285.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gestionstockage1.controllers.Stock.ModifierProduitController">
+   <children>
+      <Label layoutX="220.0" layoutY="14.0" text="Modifer un Produit" textAlignment="CENTER">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Label layoutX="147.0" layoutY="60.0" text="Nom" />
+      <TextField fx:id="fieldNom" layoutX="35.0" layoutY="85.0" prefHeight="25.0" prefWidth="250.0" />
+      <Label layoutX="408.0" layoutY="60.0" text="Type / Taille" />
+      <TextField fx:id="fieldType" layoutX="315.0" layoutY="85.0" prefHeight="25.0" prefWidth="250.0" />
+      <Label layoutX="138.0" layoutY="121.0" text="Stock" />
+      <TextField fx:id="fieldStock" layoutX="36.0" layoutY="146.0" onAction="#changerValeurStock" prefHeight="25.0" prefWidth="250.0" />
+      <Button fx:id="btnAjouter10" layoutX="300.0" layoutY="147.0" mnemonicParsing="false" onAction="#ajouter10" prefHeight="27.0" prefWidth="48.0" style="-fx-background-color: #d4f5ff; -fx-border-color: gray; -fx-background-radius: 20; -fx-border-radius: 20;" text="+ 10" />
+      <Button fx:id="btnSupprimer" layoutX="35.0" layoutY="217.0" mnemonicParsing="false" onAction="#supprimerProduit" prefHeight="34.0" prefWidth="47.0" style="-fx-background-color: #ffd4d4; -fx-border-color: gray; -fx-background-radius: 5; -fx-border-radius: 5;">
+      <graphic>
+         <ImageView fitHeight="30.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../images/logoSupprimer.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="btnAnnuler" layoutX="344.0" layoutY="229.0" mnemonicParsing="false" onAction="#annuler" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #ffd4d4; -fx-border-color: gray; -fx-background-radius: 5; -fx-border-radius: 5;" text="Annuler" />
+      <Button fx:id="btnModifier" layoutX="430.0" layoutY="229.0" mnemonicParsing="false" onAction="#modifierProduit" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #fff8d4; -fx-border-color: gray; -fx-background-radius: 5; -fx-border-radius: 5;" text="Modifier" />
+      <Button fx:id="btnAjouter1" layoutX="359.0" layoutY="147.0" mnemonicParsing="false" onAction="#ajouter1" prefHeight="27.0" prefWidth="48.0" style="-fx-background-color: #d4f5ff; -fx-border-color: gray; -fx-background-radius: 20; -fx-border-radius: 20;" text="+ 1" />
+      <Button fx:id="btnReinitialiser" layoutX="417.0" layoutY="147.0" mnemonicParsing="false" onAction="#reinitialiser0" prefHeight="27.0" prefWidth="48.0" style="-fx-background-color: #d4f5ff; -fx-border-color: gray; -fx-background-radius: 20; -fx-border-radius: 20;" text="0" />
+      <Button fx:id="btnEnlever1" layoutX="474.0" layoutY="147.0" mnemonicParsing="false" onAction="#enlever1" prefHeight="27.0" prefWidth="48.0" style="-fx-background-color: #d4f5ff; -fx-border-color: gray; -fx-background-radius: 20; -fx-border-radius: 20;" text="- 1" />
+      <Button fx:id="btnEnlever10" layoutX="532.0" layoutY="147.0" mnemonicParsing="false" onAction="#enlever10" prefHeight="27.0" prefWidth="48.0" style="-fx-background-color: #d4f5ff; -fx-border-color: gray; -fx-background-radius: 20; -fx-border-radius: 20;" text="- 10" />
+   </children>
+</AnchorPane>

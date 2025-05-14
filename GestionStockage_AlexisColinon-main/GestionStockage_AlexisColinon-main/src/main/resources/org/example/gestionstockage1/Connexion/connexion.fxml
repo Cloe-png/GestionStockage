@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="262.0" prefWidth="243.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gestionstockage1.controllers.ConnexionController">
+    <!-- Titre -->
+    <Label layoutX="62.0" layoutY="14.0" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Connexion" />
+
+    <!-- Champ pour le nom d'utilisateur -->
+    <Label layoutX="76.0" layoutY="69.0" text="Nom d'utilisateur" />
+    <TextField fx:id="fieldUtilisateur" layoutX="23.0" layoutY="86.0" prefHeight="25.0" prefWidth="197.0" promptText="Entrez votre nom d'utilisateur" />
+
+    <!-- Champ pour le mot de passe -->
+    <Label layoutX="87.0" layoutY="131.0" text="Mot de passe" />
+    <PasswordField fx:id="fieldMdp" layoutX="23.0" layoutY="148.0" prefHeight="25.0" prefWidth="197.0" promptText="Entrez votre mot de passe" />
+
+    <!-- Bouton de connexion -->
+    <Button fx:id="btnLogin" onAction="#cliquerConnecter" layoutX="74.0" layoutY="194.0" style="-fx-font-size: 14px; -fx-background-color: #d4e8ff; -fx-border-color: gray; -fx-background-radius: 5; -fx-border-radius: 5;" text="Se connecter" />
+</AnchorPane>

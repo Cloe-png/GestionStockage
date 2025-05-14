@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="640.0" prefWidth="1024.0" style="-fx-background-color: e1e8ed;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gestionstockage1.controllers.Profil.ProfilAdminController">
+    <children>
+
+        <!-- Bandeau vertical à gauche -->
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6f4ff" height="514.0" layoutY="63.0" stroke="WHITE" strokeType="INSIDE" width="68.0" />
+        <ImageView fitHeight="46.0" fitWidth="43.0" layoutX="12.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../images/iconProfil.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="btnPageProfil" layoutY="69.0" mnemonicParsing="false" onAction="#allerPageProfil" opacity="0.1" prefHeight="68.0" prefWidth="83.0" style="-fx-background-color: blue;" />
+        <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="16.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../images/iconStock.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="btnPageStock" layoutY="209.0" mnemonicParsing="false" onAction="#allerPageStock" opacity="0.0" prefHeight="68.0" prefWidth="83.0" style="-fx-background-color: blue;" />
+        <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="16.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../images/iconChantiers.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="btnPageChantiers" layoutY="294.0" mnemonicParsing="false" onAction="#allerPageChantiers" opacity="0.0" prefHeight="68.0" prefWidth="83.0" style="-fx-background-color: blue;" />
+        <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="16.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../images/iconHistorique.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="btnPageHistorique" layoutY="379.0" mnemonicParsing="false" onAction="#allerPageHistorique" opacity="0.0" prefHeight="68.0" prefWidth="83.0" style="-fx-background-color: blue;" />
+        <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="16.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../images/iconDeconnexion.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="btnPageDeconnexion" layoutY="509.0" mnemonicParsing="false" onAction="#allerPageDeconnexion" opacity="0.0" prefHeight="68.0" prefWidth="83.0" style="-fx-background-color: blue;" />
+
+        <!-- Titre principal -->
+        <Label layoutX="512.0" layoutY="14.0" text="Profil">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+
+        <!-- ScrollPane contenant tout le contenu variable -->
+        <ScrollPane fitToWidth="true" layoutX="90.0" layoutY="70.0" prefHeight="550.0" prefWidth="900.0">
+            <content>
+                <VBox alignment="TOP_CENTER" spacing="30.0" style="-fx-padding: 20;">
+
+                    <!-- Partie haute : Modifier Profil + Créer Utilisateur -->
+                    <HBox alignment="CENTER" spacing="50.0">
+                        <children>
+                            <!-- Modifier profil -->
+                            <VBox prefWidth="400.0" spacing="15.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 10; -fx-border-color: #cccccc; -fx-border-radius: 10; -fx-padding: 20;">
+                                <children>
+                                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Modifier votre profil" />
+
+                                    <Label text="Nouveau pseudo :" />
+                                    <TextField fx:id="nouveauPseudoField" promptText="Entrez votre nouveau pseudo" />
+
+                                    <Label text="Mot de passe actuel :" />
+                                    <PasswordField fx:id="ancienMdpField" promptText="Entrez votre mot de passe actuel" />
+
+                                    <Label text="Nouveau mot de passe :" />
+                                    <PasswordField fx:id="nouveauMdpField" promptText="Entrez votre nouveau mot de passe" />
+
+                                    <Label text="Confirmer le nouveau mot de passe :" />
+                                    <PasswordField fx:id="confirmerMdpField" promptText="Confirmez votre nouveau mot de passe" />
+
+                                    <HBox alignment="CENTER" spacing="10.0">
+                                        <Button fx:id="btnModifierProfil" onAction="#modifierProfil" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Enregistrer" />
+                                        <Button fx:id="btnAnnulerModification" onAction="#annulerModification" style="-fx-background-color: #f44336; -fx-text-fill: white;" text="Annuler" />
+                                    </HBox>
+                                </children>
+                            </VBox>
+
+                            <!-- Créer un nouvel utilisateur -->
+                            <VBox prefWidth="400.0" spacing="15.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 10; -fx-border-color: #cccccc; -fx-border-radius: 10; -fx-padding: 20;">
+                                <children>
+                                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Créer un nouvel utilisateur" />
+
+                                    <Label text="Pseudo :" />
+                                    <TextField fx:id="creationPseudoField" promptText="Entrez un pseudo" />
+
+                                    <Label text="Mot de passe :" />
+                                    <PasswordField fx:id="creationMdpField" promptText="Entrez un mot de passe" />
+
+                                    <HBox alignment="CENTER" spacing="10.0" />
+                                     <Button fx:id="btnCreerUtilisateur" onAction="#creerUtilisateur" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Valider" />
+                                     <Button fx:id="btnAnnulerCreation" onAction="#annulerCreation" style="-fx-background-color: #f44336; -fx-text-fill: white;" text="Annuler" />
+                                </children>
+                            </VBox>
+                        </children>
+                    </HBox>
+
+                    <!-- Partie basse : Liste utilisateurs -->
+                    <VBox prefWidth="700.0" spacing="20.0">
+                        <children>
+                            <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Liste des utilisateurs" />
+                            <VBox fx:id="utilisateurListVBox" spacing="15.0" style="-fx-padding: 10;" />
+                        </children>
+                    </VBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+
+    </children>
+</AnchorPane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane pickOnBounds="false" prefHeight="333.0" prefWidth="279.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gestionstockage1.controllers.Stock.NouveauProduitController">
+   <children>
+      <Label layoutX="62.0" layoutY="23.0" text="Ajouter un produit" textAlignment="CENTER">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="98.0" layoutY="70.0" text="Nom du produit" />
+      <TextField fx:id="fieldNom" alignment="CENTER" layoutX="23.0" layoutY="94.0" prefHeight="25.0" prefWidth="233.0" promptText="ex : rail" />
+      <Label layoutX="107.0" layoutY="129.0" text="Type / Taille" />
+      <TextField fx:id="fieldType" alignment="CENTER" layoutX="23.0" layoutY="153.0" prefHeight="25.0" prefWidth="233.0" promptText="ex : 48mm" />
+      <Label layoutX="120.0" layoutY="185.0" text="Quantite" />
+      <TextField fx:id="fieldQuantite" alignment="CENTER" layoutX="25.0" layoutY="208.0" prefHeight="25.0" prefWidth="233.0" promptText="ex : 12" />
+      <Button fx:id="btnAjouter" layoutX="154.0" layoutY="272.0" mnemonicParsing="false" onAction="#ajouerProduit" text="Ajouter ce produit" style="-fx-background-color: #d4ffe6; -fx-border-color: gray; -fx-background-radius: 5; -fx-border-radius: 5;"/>
+      <Button fx:id="btnFermer" layoutX="16.0" layoutY="272.0" mnemonicParsing="false" onAction="#fermerPage" prefHeight="25.0" prefWidth="113.0" text="Annuler" style="-fx-background-color: #ffd4d4; -fx-border-color: gray; -fx-background-radius: 5; -fx-border-radius: 5;" />
+   </children>
+</AnchorPane>

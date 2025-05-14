@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="609.0" prefWidth="1137.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gestionstockage1.controllers.Chantiers.ModifierChantierController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutY="-2.0" prefHeight="58.0" prefWidth="1137.0" text="Gestion du chantier" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldRecherche" alignment="CENTER" layoutX="332.0" layoutY="69.0" onKeyReleased="#rechercherMateriel" prefHeight="35.0" prefWidth="474.0" promptText="rechercher" />
+      <ScrollPane fitToWidth="true" layoutX="14.0" layoutY="167.0" prefHeight="391.0" prefWidth="542.0" style="-fx-background-color: #e1e8ed;">
+         <content>
+            <VBox fx:id="vboxStock" maxHeight="Infinity" prefWidth="675.0" spacing="10.0" style="-fx-background-color: #e1e8ed; -fx-background: #e1e8ed; " />
+         </content>
+      </ScrollPane>
+      <ScrollPane fitToWidth="true" layoutX="581.0" layoutY="167.0" prefHeight="391.0" prefWidth="542.0" style="-fx-background-color: #e1e8ed;">
+         <content>
+            <VBox fx:id="vboxSelectionnes" maxHeight="Infinity" prefWidth="675.0" spacing="10.0" style="-fx-background-color: #e1e8ed; -fx-background: #e1e8ed; " />
+         </content>
+      </ScrollPane>
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="14.0" layoutY="132.0" prefHeight="35.0" prefWidth="542.0" text="Disponible dans le stock" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="581.0" layoutY="132.0" prefHeight="35.0" prefWidth="542.0" text="Sélectionné pour le chantier" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="919.0" layoutY="570.0" mnemonicParsing="false" onAction="#enregistrerModifications" prefHeight="25.0" prefWidth="204.0" text="Enregistrer les modifications" />
+      <Button layoutX="818.0" layoutY="570.0" mnemonicParsing="false" onAction="#annuler" prefHeight="25.0" prefWidth="90.0" text="Annuler" />
+      <Button layoutX="14.0" layoutY="570.0" mnemonicParsing="false" onAction="#modifierInfos" prefHeight="25.0" prefWidth="261.0" text="Modifier les informations du chantier" />
+   </children>
+</AnchorPane>

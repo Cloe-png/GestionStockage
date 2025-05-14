@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="640.0" prefWidth="1024.0" style="-fx-background-color: e1e8ed;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gestionstockage1.controllers.Stock.StockController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6f4ff" height="514.0" layoutY="63.0" stroke="WHITE" strokeType="INSIDE" width="68.0" />
+      <ImageView fitHeight="46.0" fitWidth="43.0" layoutX="12.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../images/iconProfil.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnPageProfil" layoutY="69.0" mnemonicParsing="false" onAction="#allerPageProfil" opacity="0.0" prefHeight="68.0" prefWidth="83.0" style="-fx-background-color: blue;" />
+      <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="16.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../images/iconStock.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnPageStock" layoutY="209.0" mnemonicParsing="false" onAction="#allerPageStock" opacity="0.1" prefHeight="68.0" prefWidth="83.0" style="-fx-background-color: blue;" />
+      <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="16.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../images/iconChantiers.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnPageChantiers" layoutY="294.0" mnemonicParsing="false" onAction="#allerPageChantiers" opacity="0.0" prefHeight="68.0" prefWidth="83.0" style="-fx-background-color: blue;" />
+      <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="16.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../images/iconHistorique.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnPageHistorique" layoutY="379.0" mnemonicParsing="false" onAction="#allerPageHistorique" opacity="0.0" prefHeight="68.0" prefWidth="83.0" style="-fx-background-color: blue;" />
+      <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="16.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../images/iconDeconnexion.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnPageDeconnexion" layoutY="509.0" mnemonicParsing="false" onAction="#allerPageDeconnexion" opacity="0.0" prefHeight="68.0" prefWidth="83.0" style="-fx-background-color: blue;" />
+
+
+      <Button fx:id="btnAjouterMateriel" layoutX="812.0" layoutY="587.0" mnemonicParsing="false" onAction="#nouveauProduit" text="Ajouter un nouveau materiel" />
+
+      <ScrollPane fx:id="scrollPane" fitToWidth="true" layoutX="107.0" layoutY="119.0" prefHeight="438.0" prefWidth="874.0" style="-fx-background-color: #e1e8ed;">
+         <content>
+            <VBox fx:id="vboxx" maxHeight="Infinity" prefWidth="675.0" spacing="10.0" style="-fx-background-color: #e1e8ed; -fx-background: #e1e8ed; " />
+         </content>
+      </ScrollPane>
+      <Label layoutX="513.0" layoutY="14.0" text="Stock">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldRecherche" alignment="CENTER" layoutX="308.0" layoutY="64.0" onKeyReleased="#rechercherMateriel" prefHeight="35.0" prefWidth="474.0" promptText="rechercher" />
+   </children>
+</AnchorPane>
