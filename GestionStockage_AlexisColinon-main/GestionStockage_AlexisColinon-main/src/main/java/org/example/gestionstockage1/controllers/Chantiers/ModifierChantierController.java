@@ -7,9 +7,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -48,7 +46,6 @@ public class ModifierChantierController {
 
     private Map<Integer, Integer> modifications = new HashMap<>();
 
-
     private Connection c = ConnexionBDD.initialiserConnexion();
 
     private Stage stage;
@@ -60,7 +57,6 @@ public class ModifierChantierController {
 
     public void setInformations(int id) {
         this.id = id;
-
     }
 
     @FXML
@@ -95,7 +91,6 @@ public class ModifierChantierController {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-
         }
     }
 
@@ -126,7 +121,6 @@ public class ModifierChantierController {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-
         }
     }
 
@@ -392,6 +386,47 @@ public class ModifierChantierController {
             e.printStackTrace();
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    private void supprimerChantier(ActionEvent event) {
+        Connection c = ConnexionBDD.initialiserConnexion();
+        if (c != null) {
+            try {
+                // Supprimer les liaisons entre le chantier et les matériaux
+                String deleteLiaisons = "DELETE FROM liaisonchantiermateriel WHERE idChantier = ?";
+                PreparedStatement psLiaisons = c.prepareStatement(deleteLiaisons);
+                psLiaisons.setInt(1, id);
+                psLiaisons.executeUpdate();
+                psLiaisons.close();
+
+                // Supprimer le chantier
+                String deleteChantier = "DELETE FROM chantier WHERE idChantier = ?";
+                PreparedStatement psChantier = c.prepareStatement(deleteChantier);
+                psChantier.setInt(1, id);
+                psChantier.executeUpdate();
+                psChantier.close();
+
+                // Afficher un message de succès
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Succès");
+                alert.setHeaderText(null);
+                alert.setContentText("Le chantier a été supprimé avec succès.");
+                alert.showAndWait();
+
+                // Fermer la fenêtre après suppression
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                // Afficher un message d'erreur
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erreur");
+                alert.setHeaderText(null);
+                alert.setContentText("Une erreur est survenue lors de la suppression du chantier.");
+                alert.showAndWait();
+            }
         }
     }
 }
