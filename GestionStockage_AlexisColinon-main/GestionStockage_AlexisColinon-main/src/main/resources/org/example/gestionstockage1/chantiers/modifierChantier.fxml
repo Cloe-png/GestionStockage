@@ -35,5 +35,6 @@
       <Button layoutX="919.0" layoutY="570.0" mnemonicParsing="false" onAction="#enregistrerModifications" prefHeight="25.0" prefWidth="204.0" text="Enregistrer les modifications" />
       <Button layoutX="818.0" layoutY="570.0" mnemonicParsing="false" onAction="#annuler" prefHeight="25.0" prefWidth="90.0" text="Annuler" />
       <Button layoutX="14.0" layoutY="570.0" mnemonicParsing="false" onAction="#modifierInfos" prefHeight="25.0" prefWidth="261.0" text="Modifier les informations du chantier" />
+      <Button layoutX="285.0" layoutY="570.0" mnemonicParsing="false" onAction="#supprimerChantier" prefHeight="25.0" prefWidth="204.0" text="Supprimer le chantier" />
    </children>
 </AnchorPane>
